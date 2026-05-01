@@ -5,14 +5,14 @@ import FadeUp from './FadeUp';
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/5 bg-[#050505] overflow-hidden" data-testid="site-footer">
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-80 w-[80%] rounded-full bg-[#FFB300]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-80 w-[80%] rounded-full bg-[#EF2B3B]/5 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-10">
         <FadeUp>
           <div className="grid lg:grid-cols-[1.3fr_1fr_1fr_1fr] gap-12">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#FFB300] text-black font-display text-xl">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#EF2B3B] text-black font-display text-xl">
                   S
                 </span>
                 <span className="font-display text-lg text-white">Smart Your Company</span>
@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#FFB300] mb-5">
+              <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#EF2B3B] mb-5">
                 Navigate
               </div>
               <ul className="space-y-3 text-zinc-300">
@@ -39,7 +39,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#FFB300] mb-5">
+              <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#EF2B3B] mb-5">
                 Contact
               </div>
               <ul className="space-y-3 text-zinc-300 text-sm">
@@ -59,13 +59,13 @@ export default function Footer() {
             </div>
 
             <div>
-              <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#FFB300] mb-5">
+              <div className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#EF2B3B] mb-5">
                 Ready?
               </div>
               <Link
                 to="/contact"
                 data-testid="footer-cta-start"
-                className="group inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-[#FFB300] hover:bg-[#FFB300] hover:text-black text-white px-5 py-3 text-sm transition-all"
+                className="group inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-[#EF2B3B] hover:bg-[#EF2B3B] hover:text-black text-white px-5 py-3 text-sm transition-all"
               >
                 Start your business
                 <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -86,7 +86,7 @@ export default function Footer() {
             <div key={i} className="flex items-center gap-10 pr-10">
               {['Start Smart', 'Grow Strong', 'Stay Compliant', 'Design That Sells', 'Marketing That Converts'].map((t) => (
                 <span key={t} className="font-display text-5xl md:text-7xl text-white/5 tracking-tighter">
-                  {t} <span className="text-[#FFB300]/30">●</span>
+                  {t} <span className="text-[#EF2B3B]/30">●</span>
                 </span>
               ))}
             </div>

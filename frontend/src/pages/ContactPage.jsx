@@ -78,7 +78,7 @@ export default function ContactPage() {
           {/* Left: Contact details */}
           <div>
             <FadeUp>
-              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#FFB300] mb-6">
+              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-6">
                 / Get in touch
               </div>
             </FadeUp>
@@ -97,16 +97,16 @@ export default function ContactPage() {
                 <a
                   href="mailto:info@smartcompany.co.za"
                   data-testid="contact-email-link"
-                  className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5 hover:border-[#FFB300]/50 transition-all"
+                  className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5 hover:border-[#EF2B3B]/50 transition-all"
                 >
-                  <div className="h-12 w-12 rounded-full bg-[#FFB300]/10 flex items-center justify-center text-[#FFB300]">
+                  <div className="h-12 w-12 rounded-full bg-[#EF2B3B]/10 flex items-center justify-center text-[#EF2B3B]">
                     <Mail size={18} />
                   </div>
                   <div className="flex-1">
                     <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-zinc-500 mb-1">Email</div>
-                    <div className="text-white group-hover:text-[#FFB300] transition-colors">info@smartcompany.co.za</div>
+                    <div className="text-white group-hover:text-[#EF2B3B] transition-colors">info@smartcompany.co.za</div>
                   </div>
-                  <ArrowUpRight size={18} className="text-zinc-500 group-hover:text-[#FFB300] transition-colors" />
+                  <ArrowUpRight size={18} className="text-zinc-500 group-hover:text-[#EF2B3B] transition-colors" />
                 </a>
               </FadeUp>
 
@@ -114,16 +114,16 @@ export default function ContactPage() {
                 <a
                   href="tel:+27632393273"
                   data-testid="contact-phone-link"
-                  className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5 hover:border-[#FFB300]/50 transition-all"
+                  className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-white/[0.02] p-5 hover:border-[#EF2B3B]/50 transition-all"
                 >
-                  <div className="h-12 w-12 rounded-full bg-[#FFB300]/10 flex items-center justify-center text-[#FFB300]">
+                  <div className="h-12 w-12 rounded-full bg-[#EF2B3B]/10 flex items-center justify-center text-[#EF2B3B]">
                     <Phone size={18} />
                   </div>
                   <div className="flex-1">
                     <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-zinc-500 mb-1">Phone</div>
-                    <div className="text-white group-hover:text-[#FFB300] transition-colors">063 239 3273</div>
+                    <div className="text-white group-hover:text-[#EF2B3B] transition-colors">063 239 3273</div>
                   </div>
-                  <ArrowUpRight size={18} className="text-zinc-500 group-hover:text-[#FFB300] transition-colors" />
+                  <ArrowUpRight size={18} className="text-zinc-500 group-hover:text-[#EF2B3B] transition-colors" />
                 </a>
               </FadeUp>
 
@@ -133,16 +133,16 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noreferrer"
                   data-testid="contact-whatsapp-link"
-                  className="group flex items-center gap-5 rounded-2xl border border-[#FFB300]/30 bg-[#FFB300]/5 p-5 hover:bg-[#FFB300]/10 transition-all"
+                  className="group flex items-center gap-5 rounded-2xl border border-[#EF2B3B]/30 bg-[#EF2B3B]/5 p-5 hover:bg-[#EF2B3B]/10 transition-all"
                 >
-                  <div className="h-12 w-12 rounded-full bg-[#FFB300] text-black flex items-center justify-center">
+                  <div className="h-12 w-12 rounded-full bg-[#EF2B3B] text-black flex items-center justify-center">
                     <MessageCircle size={18} />
                   </div>
                   <div className="flex-1">
-                    <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-[#FFB300] mb-1">Fastest</div>
+                    <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-[#EF2B3B] mb-1">Fastest</div>
                     <div className="text-white">Chat on WhatsApp</div>
                   </div>
-                  <ArrowUpRight size={18} className="text-[#FFB300]" />
+                  <ArrowUpRight size={18} className="text-[#EF2B3B]" />
                 </a>
               </FadeUp>
             </div>
@@ -155,7 +155,7 @@ export default function ContactPage() {
               className="relative rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent p-8 md:p-10"
               data-testid="contact-form"
             >
-              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#FFB300] mb-8">
+              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-8">
                 / Send us a message
               </div>
 
@@ -195,7 +195,7 @@ export default function ContactPage() {
                     value={form.service}
                     onChange={update('service')}
                     data-testid="input-service"
-                    className="w-full bg-transparent border-b border-white/15 focus:border-[#FFB300] text-white py-3 px-0 outline-none transition-colors"
+                    className="w-full bg-transparent border-b border-white/15 focus:border-[#EF2B3B] text-white py-3 px-0 outline-none transition-colors"
                   >
                     {services.map((s) => (
                       <option key={s} value={s} className="bg-[#0C0C0E]">
@@ -217,7 +217,7 @@ export default function ContactPage() {
                   required
                   data-testid="input-message"
                   placeholder="Tell us about your business or idea..."
-                  className="w-full bg-transparent border-b border-white/15 focus:border-[#FFB300] text-white py-3 px-0 outline-none transition-colors resize-none placeholder:text-zinc-600"
+                  className="w-full bg-transparent border-b border-white/15 focus:border-[#EF2B3B] text-white py-3 px-0 outline-none transition-colors resize-none placeholder:text-zinc-600"
                 />
               </div>
 
@@ -225,7 +225,7 @@ export default function ContactPage() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-6 flex items-center gap-3 rounded-xl border border-[#FFB300]/40 bg-[#FFB300]/10 p-4 text-[#FFB300] text-sm"
+                  className="mt-6 flex items-center gap-3 rounded-xl border border-[#EF2B3B]/40 bg-[#EF2B3B]/10 p-4 text-[#EF2B3B] text-sm"
                   data-testid="contact-success-msg"
                 >
                   <CheckCircle2 size={18} />
@@ -252,7 +252,7 @@ export default function ContactPage() {
                   type="submit"
                   disabled={status.state === 'loading'}
                   data-testid="contact-submit-btn"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#FFB300] text-black font-medium px-8 py-4 text-sm hover:bg-[#FFC940] transition-all disabled:opacity-60 disabled:cursor-not-allowed glow-amber-hover"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#EF2B3B] text-black font-medium px-8 py-4 text-sm hover:bg-[#FF4655] transition-all disabled:opacity-60 disabled:cursor-not-allowed glow-amber-hover"
                 >
                   {status.state === 'loading' ? 'Sending…' : 'Send Message'}
                   <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -271,7 +271,7 @@ function Field({ label, name, value, onChange, placeholder, type = 'text', requi
     <div>
       <label className="block font-mono text-[10px] tracking-[0.25em] uppercase text-zinc-500 mb-2">
         {label}
-        {required && <span className="text-[#FFB300]"> *</span>}
+        {required && <span className="text-[#EF2B3B]"> *</span>}
       </label>
       <input
         type={type}
@@ -281,7 +281,7 @@ function Field({ label, name, value, onChange, placeholder, type = 'text', requi
         placeholder={placeholder}
         required={required}
         data-testid={testid}
-        className="w-full bg-transparent border-b border-white/15 focus:border-[#FFB300] text-white py-3 px-0 outline-none transition-colors placeholder:text-zinc-600"
+        className="w-full bg-transparent border-b border-white/15 focus:border-[#EF2B3B] text-white py-3 px-0 outline-none transition-colors placeholder:text-zinc-600"
       />
     </div>
   );

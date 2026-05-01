@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import {
   ArrowUpRight,
   MessageCircle,
@@ -16,6 +16,14 @@ import {
 import SplitText from '../components/SplitText';
 import FadeUp from '../components/FadeUp';
 import CTAStrip from '../components/CTAStrip';
+import Slideshow from '../components/Slideshow';
+import BackgroundFX from '../components/BackgroundFX';
+import {
+  LogoCard, LOGO_ITEMS,
+  LetterheadCard, LETTERHEAD_ITEMS,
+  SocialPostMock, SOCIAL_POST_ITEMS,
+  CertificateMock, CERT_ITEMS,
+} from '../components/PortfolioMocks';
 
 const HERO_IMG =
   'https://static.prod-images.emergentagent.com/jobs/181460bd-50cf-4e24-8bb8-422d5fb0cfe2/images/f7323ca0bd610312f1daf7d5bdaa4a9c2970b0ad9114f3dade3fe3fa75c27870.png';
@@ -46,9 +54,9 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="flex items-center gap-3 font-mono text-[11px] tracking-[0.3em] uppercase text-[#FFB300] mb-8"
+          className="flex items-center gap-3 font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-8"
         >
-          <span className="h-px w-12 bg-[#FFB300]" />
+          <span className="h-px w-12 bg-[#EF2B3B]" />
           Smart Your Company — South Africa
         </motion.div>
 
@@ -60,7 +68,7 @@ function Hero() {
             <SplitText text="Grow Strong." delay={0.4} />
           </div>
           <div className="overflow-hidden">
-            <span className="text-[#FFB300]">
+            <span className="text-[#EF2B3B]">
               <SplitText text="Stay Compliant." delay={0.6} />
             </span>
           </div>
@@ -85,7 +93,7 @@ function Hero() {
           <Link
             to="/contact"
             data-testid="hero-start-btn"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#FFB300] text-black font-medium px-8 py-4 text-base hover:bg-[#FFC940] transition-all glow-amber-hover"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#EF2B3B] text-black font-medium px-8 py-4 text-base hover:bg-[#FF4655] transition-all glow-amber-hover"
           >
             Start Your Business
             <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -95,7 +103,7 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
             data-testid="hero-whatsapp-btn"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-[#FFB300] hover:text-[#FFB300] text-white px-8 py-4 text-base transition-all"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-[#EF2B3B] hover:text-[#EF2B3B] text-white px-8 py-4 text-base transition-all"
           >
             <MessageCircle size={18} />
             Chat on WhatsApp
@@ -119,6 +127,7 @@ function Hero() {
 function About() {
   return (
     <section className="relative py-24 md:py-40 border-t border-white/5" data-testid="home-about">
+      <BackgroundFX variant="dots" />
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.2fr] gap-16 items-center">
         <FadeUp>
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
@@ -132,7 +141,7 @@ function About() {
 
         <div>
           <FadeUp>
-            <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#FFB300] mb-6">
+            <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-6">
               / About Us
             </div>
           </FadeUp>
@@ -155,7 +164,7 @@ function About() {
                 { k: '24h', l: 'Avg response' },
               ].map((s) => (
                 <div key={s.l}>
-                  <div className="font-display text-3xl md:text-4xl text-[#FFB300]">{s.k}</div>
+                  <div className="font-display text-3xl md:text-4xl text-[#EF2B3B]">{s.k}</div>
                   <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-zinc-500 mt-2">{s.l}</div>
                 </div>
               ))}
@@ -196,12 +205,13 @@ const services = [
 
 function Services() {
   return (
-    <section className="relative py-24 md:py-40 border-t border-white/5" data-testid="home-services">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="relative py-24 md:py-40 border-t border-white/5 overflow-hidden" data-testid="home-services">
+      <BackgroundFX variant="grid" />
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[1fr_1.5fr] gap-10 mb-20">
           <div>
             <FadeUp>
-              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#FFB300] mb-6">
+              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-6">
                 / What We Do
               </div>
             </FadeUp>
@@ -223,7 +233,7 @@ function Services() {
               <Link
                 to={s.to}
                 data-testid={`service-card-${s.title.toLowerCase().replace(' ', '-')}`}
-                className="group relative block rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-[#FFB300]/60 transition-all h-full"
+                className="group relative block rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-[#EF2B3B]/60 transition-all h-full"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -232,19 +242,19 @@ function Services() {
                     className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-[900ms]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0E] to-transparent" />
-                  <div className="absolute top-5 left-5 font-mono text-[11px] tracking-[0.3em] text-[#FFB300]">
+                  <div className="absolute top-5 left-5 font-mono text-[11px] tracking-[0.3em] text-[#EF2B3B]">
                     / {s.num}
                   </div>
-                  <div className="absolute top-5 right-5 h-10 w-10 rounded-full bg-black/50 backdrop-blur border border-white/10 flex items-center justify-center text-[#FFB300]">
+                  <div className="absolute top-5 right-5 h-10 w-10 rounded-full bg-black/50 backdrop-blur border border-white/10 flex items-center justify-center text-[#EF2B3B]">
                     <s.icon size={18} />
                   </div>
                 </div>
                 <div className="p-7">
-                  <h3 className="font-display text-2xl md:text-3xl text-white tracking-tight mb-3 group-hover:text-[#FFB300] transition-colors">
+                  <h3 className="font-display text-2xl md:text-3xl text-white tracking-tight mb-3 group-hover:text-[#EF2B3B] transition-colors">
                     {s.title}
                   </h3>
                   <p className="text-zinc-400 leading-relaxed text-sm">{s.text}</p>
-                  <div className="mt-6 inline-flex items-center gap-2 text-[#FFB300] font-mono text-[11px] tracking-[0.22em] uppercase">
+                  <div className="mt-6 inline-flex items-center gap-2 text-[#EF2B3B] font-mono text-[11px] tracking-[0.22em] uppercase">
                     Explore
                     <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
@@ -279,10 +289,10 @@ const steps = [
 function HowItWorks() {
   return (
     <section className="relative py-24 md:py-40 border-t border-white/5 overflow-hidden" data-testid="home-how">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#FFB300]/5 blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#EF2B3B]/5 blur-[160px] pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         <FadeUp>
-          <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#FFB300] mb-6">
+          <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-6">
             / Process
           </div>
         </FadeUp>
@@ -294,9 +304,9 @@ function HowItWorks() {
           {steps.map((s, i) => (
             <FadeUp key={s.n} delay={i * 0.15}>
               <div className="relative pt-8">
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-[#FFB300]/60 via-white/10 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-[#EF2B3B]/60 via-white/10 to-transparent" />
                 <div className="flex items-baseline gap-4 mb-6">
-                  <div className="font-display text-6xl md:text-7xl text-[#FFB300]/30 leading-none">
+                  <div className="font-display text-6xl md:text-7xl text-[#EF2B3B]/30 leading-none">
                     {s.n}
                   </div>
                 </div>
@@ -322,12 +332,13 @@ const reasons = [
 
 function WhyUs() {
   return (
-    <section className="relative py-24 md:py-40 border-t border-white/5" data-testid="home-why">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="relative py-24 md:py-40 border-t border-white/5 overflow-hidden" data-testid="home-why">
+      <BackgroundFX variant="rays" />
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16">
           <div>
             <FadeUp>
-              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#FFB300] mb-6">
+              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-6">
                 / Why choose us
               </div>
             </FadeUp>
@@ -339,8 +350,8 @@ function WhyUs() {
           <div className="grid sm:grid-cols-2 gap-5">
             {reasons.map((r, i) => (
               <FadeUp key={r.title} delay={i * 0.08}>
-                <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-7 h-full hover:border-[#FFB300]/50 hover:bg-white/[0.04] transition-all">
-                  <div className="h-11 w-11 rounded-full bg-[#FFB300]/10 flex items-center justify-center text-[#FFB300] mb-6 group-hover:bg-[#FFB300] group-hover:text-black transition-colors">
+                <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-7 h-full hover:border-[#EF2B3B]/50 hover:bg-white/[0.04] transition-all">
+                  <div className="h-11 w-11 rounded-full bg-[#EF2B3B]/10 flex items-center justify-center text-[#EF2B3B] mb-6 group-hover:bg-[#EF2B3B] group-hover:text-black transition-colors">
                     <r.icon size={18} />
                   </div>
                   <h3 className="font-display text-xl md:text-2xl text-white mb-3 tracking-tight">{r.title}</h3>
@@ -378,12 +389,13 @@ const packages = [
 
 function Packages() {
   return (
-    <section className="relative py-24 md:py-40 border-t border-white/5" data-testid="home-packages">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="relative py-24 md:py-40 border-t border-white/5 overflow-hidden" data-testid="home-packages">
+      <BackgroundFX variant="dots" />
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div>
             <FadeUp>
-              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#FFB300] mb-6">
+              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-6">
                 / Packages
               </div>
             </FadeUp>
@@ -395,7 +407,7 @@ function Packages() {
             <Link
               to="/contact"
               data-testid="packages-quote-btn"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-[#FFB300] hover:text-[#FFB300] text-white px-6 py-3 text-sm transition-all"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-[#EF2B3B] hover:text-[#EF2B3B] text-white px-6 py-3 text-sm transition-all"
             >
               Get a quote
               <ArrowUpRight size={16} />
@@ -410,12 +422,12 @@ function Packages() {
                 data-testid={`package-card-${p.name.toLowerCase()}`}
                 className={`relative rounded-2xl p-8 h-full transition-all ${
                   p.featured
-                    ? 'bg-gradient-to-b from-[#FFB300]/10 to-transparent border border-[#FFB300]/40 glow-amber'
+                    ? 'bg-gradient-to-b from-[#EF2B3B]/10 to-transparent border border-[#EF2B3B]/40 glow-amber'
                     : 'bg-white/[0.02] border border-white/10 hover:border-white/20'
                 }`}
               >
                 {p.featured && (
-                  <div className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-[#FFB300] text-black font-mono text-[10px] tracking-[0.22em] uppercase px-3 py-1">
+                  <div className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-[#EF2B3B] text-black font-mono text-[10px] tracking-[0.22em] uppercase px-3 py-1">
                     Most popular
                   </div>
                 )}
@@ -428,7 +440,7 @@ function Packages() {
                 <ul className="mt-8 space-y-4">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-zinc-300">
-                      <Check size={16} className={p.featured ? 'text-[#FFB300] mt-1' : 'text-zinc-500 mt-1'} />
+                      <Check size={16} className={p.featured ? 'text-[#EF2B3B] mt-1' : 'text-zinc-500 mt-1'} />
                       <span className="text-sm leading-relaxed">{f}</span>
                     </li>
                   ))}
@@ -437,8 +449,8 @@ function Packages() {
                   to="/contact"
                   className={`mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm transition-all w-full justify-center ${
                     p.featured
-                      ? 'bg-[#FFB300] text-black hover:bg-[#FFC940]'
-                      : 'border border-white/15 text-white hover:border-[#FFB300] hover:text-[#FFB300]'
+                      ? 'bg-[#EF2B3B] text-black hover:bg-[#FF4655]'
+                      : 'border border-white/15 text-white hover:border-[#EF2B3B] hover:text-[#EF2B3B]'
                   }`}
                   data-testid={`package-cta-${p.name.toLowerCase()}`}
                 >
@@ -454,12 +466,73 @@ function Packages() {
   );
 }
 
+function Showcase() {
+  const tabs = [
+    { key: 'logo', label: 'Logos', eyebrow: 'Brand identity', items: LOGO_ITEMS, render: (b) => <LogoCard brand={b} /> },
+    { key: 'letter', label: 'Letterheads', eyebrow: 'Stationery system', items: LETTERHEAD_ITEMS, render: (b) => <LetterheadCard brand={b} /> },
+    { key: 'social', label: 'Social Posts', eyebrow: 'Content that sells', items: SOCIAL_POST_ITEMS, render: (p) => <SocialPostMock post={p} /> },
+    { key: 'cert', label: 'Compliance', eyebrow: 'Paperwork handled', items: CERT_ITEMS, render: (c) => <CertificateMock cert={c} /> },
+  ];
+  const [active, setActive] = useState('logo');
+  const current = tabs.find((t) => t.key === active);
+
+  return (
+    <section className="relative py-24 md:py-40 border-t border-white/5 overflow-hidden" data-testid="home-showcase">
+      <BackgroundFX variant="orbs" />
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-14">
+          <div>
+            <FadeUp>
+              <div className="font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-6">
+                / Showcase
+              </div>
+            </FadeUp>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight text-white max-w-3xl">
+              <SplitText text="Work we build for founders like you." />
+            </h2>
+          </div>
+          <FadeUp delay={0.2}>
+            <div className="flex flex-wrap gap-2" data-testid="showcase-tabs">
+              {tabs.map((t) => (
+                <button
+                  key={t.key}
+                  onClick={() => setActive(t.key)}
+                  data-testid={`showcase-tab-${t.key}`}
+                  className={`rounded-full border px-4 py-2 text-xs font-mono tracking-[0.2em] uppercase transition-all ${
+                    active === t.key
+                      ? 'bg-[#EF2B3B] text-black border-[#EF2B3B]'
+                      : 'border-white/15 text-zinc-400 hover:border-white/40 hover:text-white'
+                  }`}
+                >
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          </FadeUp>
+        </div>
+
+        <FadeUp key={active}>
+          <Slideshow
+            items={current.items}
+            renderItem={current.render}
+            eyebrow={current.eyebrow}
+            title={`A look at our ${current.label.toLowerCase()} work.`}
+            testId={`showcase-slideshow-${active}`}
+          />
+        </FadeUp>
+      </div>
+    </section>
+  );
+}
+
+
 export default function HomePage() {
   return (
     <>
       <Hero />
       <About />
       <Services />
+      <Showcase />
       <HowItWorks />
       <WhyUs />
       <Packages />

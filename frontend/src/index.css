@@ -8,8 +8,8 @@
 :root {
     --bg: #050505;
     --surface: #0C0C0E;
-    --primary: #FFB300;
-    --primary-hover: #FFC940;
+    --primary: #EF2B3B;
+    --primary-hover: #FF4655;
     --text-primary: #F3F3F1;
     --text-secondary: #A1A1AA;
     --border: #27272A;
@@ -42,7 +42,7 @@ body {
 }
 
 ::selection {
-    background: #FFB300;
+    background: #EF2B3B;
     color: #050505;
 }
 
@@ -58,7 +58,7 @@ body {
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #FFB300;
+    background: #EF2B3B;
 }
 
 /* Grain overlay */
@@ -99,10 +99,10 @@ html.lenis body {
 
 /* Glow effect */
 .glow-amber {
-    box-shadow: 0 0 40px -10px rgba(255, 179, 0, 0.4);
+    box-shadow: 0 0 40px -10px rgba(239, 43, 59, 0.4);
 }
 .glow-amber-hover:hover {
-    box-shadow: 0 0 60px -5px rgba(255, 179, 0, 0.55);
+    box-shadow: 0 0 60px -5px rgba(239, 43, 59, 0.55);
 }
 
 /* Gradient mask for images */

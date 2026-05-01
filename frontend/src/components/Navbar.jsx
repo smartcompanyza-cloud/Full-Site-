@@ -39,7 +39,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group" data-testid="nav-logo-link">
-            <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#FFB300] text-black font-display text-lg glow-amber">
+            <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#EF2B3B] text-black font-display text-lg glow-amber">
               S
             </span>
             <div className="leading-tight hidden sm:block">
@@ -59,7 +59,7 @@ export default function Navbar() {
                 data-testid={`nav-link-${l.label.toLowerCase().replace(/[^a-z]+/g, '-')}`}
                 className={({ isActive }) =>
                   `relative font-mono text-[11px] tracking-[0.22em] uppercase transition-colors link-underline ${
-                    isActive ? 'text-[#FFB300]' : 'text-zinc-400 hover:text-white'
+                    isActive ? 'text-[#EF2B3B]' : 'text-zinc-400 hover:text-white'
                   }`
                 }
               >
@@ -74,7 +74,7 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               data-testid="nav-whatsapp-btn"
-              className="inline-flex items-center gap-2 rounded-full bg-[#FFB300] text-black font-medium px-5 py-2.5 text-sm hover:bg-[#FFC940] transition-colors glow-amber"
+              className="inline-flex items-center gap-2 rounded-full bg-[#EF2B3B] text-black font-medium px-5 py-2.5 text-sm hover:bg-[#FF4655] transition-colors glow-amber"
             >
               <span className="h-2 w-2 rounded-full bg-black animate-pulse" />
               Chat on WhatsApp
@@ -115,7 +115,7 @@ export default function Navbar() {
                     data-testid={`mobile-nav-link-${l.label.toLowerCase().replace(/[^a-z]+/g, '-')}`}
                     className={({ isActive }) =>
                       `block font-display text-4xl tracking-tight ${
-                        isActive ? 'text-[#FFB300]' : 'text-white'
+                        isActive ? 'text-[#EF2B3B]' : 'text-white'
                       }`
                     }
                   >
@@ -128,7 +128,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noreferrer"
                 data-testid="mobile-whatsapp-btn"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#FFB300] text-black font-medium px-6 py-3 w-fit"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#EF2B3B] text-black font-medium px-6 py-3 w-fit"
               >
                 Chat on WhatsApp
               </a>

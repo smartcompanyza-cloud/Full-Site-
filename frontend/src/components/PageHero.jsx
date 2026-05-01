@@ -18,8 +18,8 @@ export default function PageHero({ eyebrow, title, subtitle, image }) {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         <FadeUp>
-          <div className="flex items-center gap-3 font-mono text-[11px] tracking-[0.3em] uppercase text-[#FFB300] mb-8">
-            <span className="h-px w-10 bg-[#FFB300]" />
+          <div className="flex items-center gap-3 font-mono text-[11px] tracking-[0.3em] uppercase text-[#EF2B3B] mb-8">
+            <span className="h-px w-10 bg-[#EF2B3B]" />
             {eyebrow}
           </div>
         </FadeUp>
