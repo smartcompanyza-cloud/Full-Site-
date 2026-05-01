@@ -1,0 +1,83 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Jewel & Luxury / Cinematic)",
+  "concept": "Oppenheimer meets Awwwards - Moody, authoritative, and motion-heavy. A cinematic experience blending deep obsidian space with warm amber lighting to symbolize both the creative spark and structured compliance.",
+  "colors": {
+    "background": "#050505",
+    "surface": "#0C0C0E",
+    "surface_glass": "bg-white/5 backdrop-blur-2xl border border-white/10",
+    "primary": "#FFB300",
+    "primary_hover": "#FFC940",
+    "text_primary": "#F3F3F1",
+    "text_secondary": "#A1A1AA",
+    "border": "#27272A"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Cabinet Grotesk",
+      "body": "Outfit",
+      "accent": "JetBrains Mono"
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-[6vw] leading-[0.9] tracking-tighter font-bold",
+      "h2": "text-4xl sm:text-5xl leading-tight tracking-tight font-semibold",
+      "h3": "text-2xl sm:text-3xl leading-snug tracking-tight font-medium",
+      "body": "text-base sm:text-lg leading-relaxed text-zinc-400",
+      "overline": "text-xs tracking-[0.2em] uppercase font-mono text-[#FFB300]"
+    }
+  },
+  "layout": {
+    "spacing": "Generous. Use py-24 or py-32 for sections to give cinematic breathing room.",
+    "grid": "Bento-style Tetris grids for 'Services' and 'Packages'. Asymmetrical spanning.",
+    "container": "max-w-7xl mx-auto px-6 lg:px-12",
+    "radius": "rounded-2xl"
+  },
+  "components": {
+    "button": "Solid primary color for main CTA, heavy padding (px-8 py-4), rounded-full for cinematic feel, with a subtle glow effect on hover.",
+    "card": "Glassmorphic or solid surface with 1px border. Deep background, high-contrast text, hover state lifts up slightly with an amber glow.",
+    "navigation": "Sticky, crystal glass effect. `backdrop-blur-xl bg-black/60 border-b border-white/5`"
+  },
+  "animations": {
+    "scrolling": "Lenis smooth scroll is MANDATORY for the movie-like feel.",
+    "reveals": "Framer Motion. Use slow y-axis fades (y: 40, opacity: 0 -> y: 0, opacity: 1) with ease: [0.16, 1, 0.3, 1], duration: 1.2.",
+    "parallax": "Apply useScroll and useTransform to hero images and abstract backgrounds to move slightly slower than the user scrolls.",
+    "hover": "Scale up images by 1.05 with a 0.6s ease-out transition. Subtle text color shifts."
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/181460bd-50cf-4e24-8bb8-422d5fb0cfe2/images/f7323ca0bd610312f1daf7d5bdaa4a9c2970b0ad9114f3dade3fe3fa75c27870.png",
+      "description": "Cinematic abstract background, deep obsidian black with subtle amber volumetric lighting"
+    },
+    "compliance_abstract": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/181460bd-50cf-4e24-8bb8-422d5fb0cfe2/images/c61799a909a59f0ecdc12e87482baf4411d4636c0e66da39de42e4a488790921.png",
+      "description": "Glowing golden geometric structure, representing compliance and structure"
+    },
+    "design_abstract": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/181460bd-50cf-4e24-8bb8-422d5fb0cfe2/images/76916870c5f7be016ae2bf09238404eff8110ef053c258868c8edfeb672f5acd.png",
+      "description": "Vibrant glowing neon ink swirling in deep dark water, representing creativity"
+    },
+    "business_meeting": {
+      "url": "https://images.unsplash.com/photo-1714974528714-1eaf201fa508?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzc3NjU0NTY5fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Cinematic business meeting, good for About section"
+    },
+    "creative_workspace": {
+      "url": "https://images.pexels.com/photos/16284690/pexels-photo-16284690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Creative workspace with digital tablet, for graphic design/marketing section"
+    },
+    "office_environment": {
+      "url": "https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Modern open-plan office, useful for team or general agency shots"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use framer-motion heavily for cinematic text reveals (split text into words and stagger them in) and scroll-triggered fade ups.",
+    "Apply `data-testid` to all interactive elements (links, buttons, form inputs).",
+    "Install and use `@phosphor-icons/react` or `lucide-react` for premium iconography.",
+    "Implement Lenis smooth scrolling for the entire site.",
+    "Do NOT use pure black (#000000). Use `#050505` for the main background to keep it premium.",
+    "For the hero section overlay, use `bg-black/40` or a gradient fade `bg-gradient-to-t from-[#050505] to-transparent` so the background image blends perfectly into the next section.",
+    "Use standard semantic HTML elements combined with Tailwind, do not overly rely on Shadcn layout components like Card for marketing sections to retain layout freedom.",
+    "Keep typography fluid and tightly tracked on headings. Cabinet Grotesk should look monolithic.",
+    "Ensure the .js files (like tailwind.config.js and src/index.css) are updated correctly."
+  ]
+}
